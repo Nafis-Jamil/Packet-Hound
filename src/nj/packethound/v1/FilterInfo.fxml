@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="filter_pane" prefHeight="746.0" prefWidth="1106.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nj.packethound.v1.FilterController">
+    <stylesheets>
+        <URL value="@filterinfo.css" />
+    </stylesheets>
+   <children>
+      <WebView fx:id="webView" layoutX="334.0" layoutY="70.0" prefHeight="632.0" prefWidth="752.0" />
+      <HBox layoutX="334.0" layoutY="25.0">
+         <children>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="40.0">
+               <graphic>
+                  <MaterialDesignIconView glyphName="ARROW_LEFT_BOLD_CIRCLE_OUTLINE" size="25" />
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#home" prefHeight="35.0" prefWidth="45.0">
+               <graphic>
+                  <MaterialDesignIconView glyphName="HOME" size="20" />
+               </graphic>
+            </Button>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#forward">
+               <graphic>
+                  <MaterialDesignIconView glyphName="ARROW_RIGHT_BOLD_CIRCLE_OUTLINE" size="25" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="996.0" layoutY="25.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#zoom_in" prefHeight="35.0" prefWidth="45.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SEARCH_PLUS" size="20" />
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#zoom_out" prefHeight="35.0" prefWidth="45.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SEARCH_MINUS" size="20" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane id="base" layoutX="82.0" layoutY="123.0" prefHeight="417.0" prefWidth="200.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="103.0">
+         <children>
+            <VBox layoutX="16.0" layoutY="47.0" prefHeight="324.0" prefWidth="168.0" spacing="20.0">
+               <children>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#setFilterScene" prefHeight="95.0" prefWidth="197.0" text="SET FILTER">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="FILTER" size="20" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#bookmarkScene" prefHeight="95.0" prefWidth="197.0" text="BOOKMARKS">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="BOOKMARK" size="20" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="125.0" mnemonicParsing="false" onAction="#filterInfoScene" prefHeight="95.0" prefWidth="197.0" text="INFORMATION">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="INFORMATION" size="23" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

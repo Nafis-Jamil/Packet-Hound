@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="filter_pane" prefHeight="746.0" prefWidth="1106.0" stylesheets="@setfilter.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nj.packethound.v1.FilterController">
+   <children>
+      <HBox id="toggle_back" layoutX="470.0" layoutY="90.0" prefHeight="387.0" prefWidth="449.0" spacing="20.0">
+         <children>
+            <VBox prefHeight="443.0" prefWidth="156.0" spacing="40.0">
+               <children>
+                  <JFXToggleButton fx:id="ip" prefHeight="60.0" prefWidth="111.0" text="IP " toggleColor="BLACK" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="filter" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXToggleButton>
+                  <JFXToggleButton fx:id="udp" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="149.0" text="UDP   " toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="port_80" layoutX="10.0" layoutY="70.0" prefHeight="60.0" prefWidth="130.0" text="HTTP" textOverrun="WORD_ELLIPSIS" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="ip6" layoutX="10.0" layoutY="130.0" prefHeight="60.0" prefWidth="124.0" text="IPV6" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="314.0" prefWidth="156.0" spacing="40.0">
+               <children>
+                  <JFXToggleButton fx:id="arp" prefHeight="60.0" prefWidth="109.0" text="ARP" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="icmp" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="115.0" text="ICMP" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="port_443" layoutX="10.0" layoutY="70.0" prefHeight="60.0" prefWidth="125.0" text="HTTPS" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="not_arp" layoutX="10.0" layoutY="130.0" prefHeight="60.0" prefWidth="136.0" text="NO ARP" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+               </children>
+            </VBox>
+            <VBox layoutX="166.0" layoutY="10.0" prefHeight="314.0" prefWidth="164.0" spacing="40.0">
+               <children>
+                  <JFXToggleButton fx:id="tcp" prefHeight="60.0" prefWidth="111.0" text="TCP" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="port_53" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="115.0" text="DNS" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="igmp" layoutX="10.0" layoutY="70.0" prefHeight="60.0" prefWidth="122.0" text="IGMP" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+                  <JFXToggleButton fx:id="custom_filter_toggle" layoutX="10.0" layoutY="130.0" prefHeight="60.0" prefWidth="156.0" text="CUSTOM" toggleColor="BLACK" toggleGroup="$filter" toggleLineColor="#2ab2ab" unToggleColor="WHITE" unToggleLineColor="BLACK" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></JFXToggleButton>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+      </HBox>
+      <TextField fx:id="custom_filter_field" layoutX="62.0" layoutY="571.0" onKeyReleased="#set_custom_filter" prefHeight="38.0" prefWidth="708.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <Hyperlink fx:id="filter_hyper" layoutX="907.0" layoutY="26.0" onAction="#open_filter_link" text="More on Capture Filters">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font></Hyperlink>
+      <RadioButton fx:id="filter_checker" layoutX="62.0" layoutY="627.0" mnemonicParsing="false" onAction="#filter_checker_toggle" text="FILTER VALIDITY CHECK">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></RadioButton>
+      <Label fx:id="filter_warning" layoutX="62.0" layoutY="680.0" prefHeight="21.0" prefWidth="332.0" text="Experimental feature. May reduce performance." textFill="RED">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font></Label>
+      <AnchorPane id="base" layoutX="62.0" layoutY="103.0" prefHeight="417.0" prefWidth="200.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="103.0">
+         <children>
+            <VBox layoutX="16.0" layoutY="47.0" prefHeight="324.0" prefWidth="168.0" spacing="20.0">
+               <children>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#setFilterScene" prefHeight="95.0" prefWidth="197.0" text="SET FILTER">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="FILTER" size="20" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#bookmarkScene" prefHeight="95.0" prefWidth="197.0" text="BOOKMARKS">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="BOOKMARK" size="20" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="125.0" mnemonicParsing="false" onAction="#filterInfoScene" prefHeight="95.0" prefWidth="197.0" text="INFORMATION">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="INFORMATION" size="23" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

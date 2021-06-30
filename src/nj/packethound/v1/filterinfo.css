@@ -1,0 +1,45 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#filter_pane{
+    -fx-background-color: rgba(166, 240, 198,.3);
+}
+
+ #base{
+    -fx-background-color: rgba(157, 190, 185,.4);
+     
+    -fx-background-radius: 15px;
+}
+
+
+
+.button{
+    -fx-background-color: rgb(25, 67, 80);
+     -fx-text-fill: #ffffff; 
+    -fx-background-radius: 10px;
+    -fx-border-radius: 12px;
+    -fx-border-width:.5px;
+    -fx-cursor: pointer;
+   
+}
+
+.button:hover{
+    -fx-background-color: #1abc9c;
+    -fx-text-fill: black;
+
+
+}
+.button:pressed{
+    -fx-background-color: #16d9b2;
+    -fx-translate-y: 2px;
+}
+
+.button .glyph-icon{
+    -fx-fill: white;
+}
+
+.button:hover .glyph-icon{
+    -fx-fill: black;
+}
+
